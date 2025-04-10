@@ -64,17 +64,6 @@ public class arrays_obj {
             FA23[i]= new student();
             FA23[i].display();
         }
-
-
-
-        for(int i = 0; i<5 ; i++){
-            Str = FA23[i].getName();
-            if(object.equal(Str, FA23)){
-                FA23[i].display();
-            }
-        }
-
-
     }
 
 }
