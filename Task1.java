@@ -3,15 +3,15 @@ class  person{
     protected String name;
     protected String address;
     protected String e_mail;
-    protected long phone;
+    protected String  phone;
 
     person(){
         name = "null";
         address = "null";
         e_mail = "null";
-       phone = 0;
+       phone = "null";
     }
-    person(String n,String a, String e, int p){
+    person(String n,String a, String e, String p){
         name = n;
         address = a;
         e_mail= e;
@@ -30,7 +30,7 @@ class student extends person {
         dep = "null";
     }
 
-    student(String n, String a, String e, int p, String d) {
+    student(String n, String a, String e, String p, String d) {
         super(n, a, e, p);
         dep = d;
     }
@@ -45,26 +45,29 @@ class student extends person {
     class employee extends person{
         private String office;
         private int salary;
+        private dateHired d;
 
         employee(){
             office = "null";
             salary = 0;
         }
-        employee(String n,String a, String e, int p,String o, int s){
+        employee(String n,String a, String e, String p,String o, int s,dateHired d1){
             super(n,a,e,p);
             office = o;
             salary = s;
+            d = d1;
         }
 
         void display(){
             super.display();
             System.out.println("Department: " + office +"\n" + "Salary: " + salary);
+            d.display();
         }
 
     }
 
     // Date class to create an object
-    class dateHired extends employee{
+    class dateHired{
         private int day;
         private String month;
         private int year;
@@ -74,15 +77,13 @@ class student extends person {
             month ="null";
             year = 0;
         }
-        dateHired(String n,String a, String e, int p,String o, int s,int d,String m, int y){
-            super(n,a,e,p,o,s);
+        dateHired(int d,String m, int y){
             day = d;
             month = m;
             year = y;
         }
 
         void display(){
-            super.display();
             System.out.println("Date: " + day + "-"+ month +"-"  + year );
 
         }
@@ -96,8 +97,8 @@ class student extends person {
             working_hours = 0;
             rank = "null";
         }
-        faculty(String n,String a, String e, int p,String o, int s,int h, String r){
-            super(n,a,e,p,o,s);
+        faculty(String n,String a, String e, String p,String o, int s,int h, String r,dateHired d1){
+            super(n,a,e,p,o,s,d1);
             working_hours = h;
             rank = r;
         }
@@ -113,8 +114,8 @@ class student extends person {
         staff(){
             title = "null";
         }
-        staff(String n,String a, String e, int p,String o, int s,String t){
-            super(n,a,e,p,o,s);
+        staff(String n,String a, String e, String p,String o, int s,String t,dateHired d1){
+            super(n,a,e,p,o,s,d1);
             title = t;
         }
 
@@ -128,9 +129,9 @@ class student extends person {
 
 public class Task1 {
     public static void main(String[] args) {
-
-        dateHired d1 = new dateHired("Huma ","TBZS*6","humaijaz@gmail",0327-548-3539,"Computer Science",50000, 18 , "March" , 2025);
-        d1.display();
-
+        dateHired d2 = new dateHired(4,"May",2025);
+//        d2.display();
+        employee e1 = new employee("Huma","TBZS*28","humaijaz@gmail.com","03270483539","Zones",10000,d2);
+        e1.display();
     }
 }
