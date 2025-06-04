@@ -1,6 +1,6 @@
 class Simple{
     protected int num1;
-    protected float num2;
+    protected float num2; //float is used to get answer in float as int / float gives result in float type.
 
     Simple(int x , int y){
         num1 = x;
