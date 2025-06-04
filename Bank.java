@@ -25,7 +25,7 @@ class Account{
 public class Bank {
     public static void main(String[] args) {
         Account b1 = new Account(50000);
-        b1.depositBalance(2000);
+        b1.depositBalance(1500);
 
 
     }
