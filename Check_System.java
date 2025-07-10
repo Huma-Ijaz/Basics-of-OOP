@@ -1,4 +1,5 @@
-abstract class Person{
+abstract class Person  //abstract class is used to hide data 
+{
     private String name;
     Person(String n){
         name = n;
@@ -79,7 +80,7 @@ public class Check_System {
         P[1] = new Student("Saba", 3.02);
         P[2] = new Professor("ABC", 45);
         P[3] = new Professor("ABCD", 55);
-//    P[3].setPublications(100);
+//    P[3].setPublications(100);  //this is used to update specific functions that are not present in parent class
 
 
         for (int i = 0; i < 4; i++) {
